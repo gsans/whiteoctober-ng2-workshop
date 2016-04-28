@@ -1,4 +1,4 @@
-#white octover | Workshop - Introduction to Angular 2
+#white october | Workshop - Introduction to Angular 2
 
 [Instructions and Setup](http://bit.ly/whiteoctober-ng2-doc)
 
