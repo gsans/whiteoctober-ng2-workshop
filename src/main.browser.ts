@@ -19,16 +19,16 @@ import {App, APP_PROVIDERS} from './my-app';
  * Bootstrap our Angular app with a top level component `App` and inject
  * our Services and Providers into Angular's dependency injection
  */
-export function main(initialHmrState?: any): Promise<any> {
+export function main(initialHmrState?: any): void {
   setTimeout(function() {
     bootstrap(App, [
-    ...PROVIDERS,
-    ...ENV_PROVIDERS,
-    ...DIRECTIVES,
-    ...PIPES,
-    ...APP_PROVIDERS
-  ])
-  .catch(err => console.error(err));
+      ...PROVIDERS,
+      ...ENV_PROVIDERS,
+      ...DIRECTIVES,
+      ...PIPES,
+      ...APP_PROVIDERS
+    ])
+    .catch(err => console.error(err));
   }, 2000);
 }
 
