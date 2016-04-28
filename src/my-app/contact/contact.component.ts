@@ -33,7 +33,7 @@ import {Component} from 'angular2/core';
             Email is required
           </div>
           <p>
-            <button type="submit" [disabled]="!f.form.valid">Submit</button>
+            <button type="submit" md-raised-button color="primary" [disabled]="!f.form.valid">Submit</button>
           </p>
         </form>
         <pre>this.model = {{ model | json }}</pre>
