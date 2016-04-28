@@ -39,11 +39,14 @@ import {RouterActive} from './router-active';
     md-toolbar a {
       color: #fff;
     }
+    .title {
+      margin-right: 20px;
+    }
   `],
   template: `
     <header>
       <md-toolbar color="primary">
-        <span>{{ name }}</span>
+        <span class="title">{{ name }}</span>
         <nav>
           <ul>
             <li router-active>
