@@ -1,4 +1,4 @@
-//a simple service
+// a simple service
 import {Injectable} from 'angular2/core';
 
 @Injectable()

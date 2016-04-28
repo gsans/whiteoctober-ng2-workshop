@@ -2,10 +2,10 @@ import {Component, ViewEncapsulation} from 'angular2/core';
 import {Control} from 'angular2/common';
 import {URLSearchParams, Jsonp, JSONP_PROVIDERS} from 'angular2/http';
 
-//import all
+// import all
 import 'rxjs/Rx';
 /*
-//cherry pick
+// cherry pick
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/debounceTime';
@@ -53,10 +53,10 @@ export class Wikipedia {
 
   ngOnInit() {
     console.log('hello `Wikipedia` component');
-    //slow down calls          .debounceTime(2000)
-    //avoid same requests      .distinctUntilChanged()
-    //cancel pending requests  .switchMap
-    //retry if fails           .retryWhen(errors => errors.delay(5000))
+    // slow down calls          .debounceTime(2000)
+    // avoid same requests      .distinctUntilChanged()
+    // cancel pending requests  .switchMap
+    // retry if fails           .retryWhen(errors => errors.delay(5000))
 
     this.results = this.search.valueChanges
       .debounceTime(2000)
@@ -67,7 +67,7 @@ export class Wikipedia {
           .get(this.WIKIPEDIA_URL, searchParams(term))
           .retryWhen(errors => errors.delay(3000))
           .map(response => {
-            var results = formatResults(response);
+            let results = formatResults(response);
             this.hasResults = results.length > 0;
             console.log(`> Results for [${term}]: ${results.length}`);
             return results;
@@ -75,7 +75,7 @@ export class Wikipedia {
       });
 
     function searchParams(term) {
-      var params = new URLSearchParams();
+      let params = new URLSearchParams();
       params.append('action', 'opensearch');
       params.append('search', encodeURIComponent(term));
       params.append('format', 'json');
@@ -85,7 +85,7 @@ export class Wikipedia {
     }
 
     function formatResults(response) {
-      var results = response.json();
+      let results = response.json();
       return results[1].map((value, index) =>
         ({
           title: value,
@@ -98,7 +98,7 @@ export class Wikipedia {
 
   ngOnDestroy() {
     console.log('sayonara `Wikipedia` component');
-    //clean-up
+    // clean-up
     this.results.unsubscribe();
   }
 

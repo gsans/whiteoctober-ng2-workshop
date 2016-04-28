@@ -9,4 +9,4 @@ export class UsersService {
     return this.http.get('/assets/users.json')
       .map(response => response.json());
   }
-} 
+}

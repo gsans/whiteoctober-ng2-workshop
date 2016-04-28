@@ -15,7 +15,7 @@ import {RouterActive} from './router-active';
  * App Component
  * Top Level Component
  */
-@Component({ 
+@Component({
   selector: 'app',
   pipes: [ ],
   providers: [ ],
@@ -98,7 +98,7 @@ import {RouterActive} from './router-active';
   { path: '/wikipedia', name: 'Wikipedia', component: Wikipedia },
   { path: '/contact', name: 'Contact', component: Contact },
   // Async load a component using Webpack's require with es6-promise-loader and webpack `require`
-  { path: '/about', name: 'About', loader: () => require('es6-promise!./about')('About') },
+  { path: '/about', name: 'About', loader: () => require('es6-promise!./about')('About') }
 ])
 export class App {
   angularclassLogo = 'assets/img/angularclass-avatar.png';

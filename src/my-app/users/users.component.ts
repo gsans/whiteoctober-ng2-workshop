@@ -3,8 +3,8 @@ import {Component} from 'angular2/core';
 import {UsersService} from '../services/usersService';
 
 // Use webpack's `require` to get files as a raw string using raw-loader
-//let styles = require('./users.css');
-//let template = require('./users.html');
+// let styles = require('./users.css');
+// let template = require('./users.html');
 
 @Component({
   selector: 'users',
@@ -32,7 +32,9 @@ import {UsersService} from '../services/usersService';
           <tbody>
             <tr *ngFor="#user of userslist" [class.superuser]="user.superuser">
               <td>{{user.id}}</td>
-              <td (click)="onClick(user.username)">{{user.username}} <span *ngIf="user.superuser">(superuser)</span></td>
+              <td (click)="onClick(user.username)">
+                {{user.username}} 
+              <span *ngIf="user.superuser">(superuser)</span></td>
               <td>{{user.roles.join(', ')}}</td>
             </tr>
           </tbody>
@@ -43,9 +45,9 @@ import {UsersService} from '../services/usersService';
 })
 export class Users {
   private userslist;
-  
+
   constructor(users: UsersService) {
-    //this.userslist = users.get();
+    // this.userslist = users.get();
     users.get().subscribe(data => this.userslist = data.users);
   }
 
